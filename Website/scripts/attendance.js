@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function() {
     if (!username) {
         window.location.href = "index.html"; // Redirect if not logged in
     } else {
-        document.getElementById("username").textContent = username; // Show username
+        document.getElementById("username").textContent = username;
         loadAttendance();
     }
 
