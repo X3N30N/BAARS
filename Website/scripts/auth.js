@@ -18,19 +18,17 @@ window.onload = function() {
     const user = localStorage.getItem("user");
     const currentPath = window.location.pathname;
     
-    // If user is logged in
+    console.log("Current path:", currentPath);
+
     if (user) {
-        // Only redirect from index.html to dashboard
         if (currentPath.endsWith("index.html")) {
             window.location.href = "dashboard.html";
         }
-    } 
-    // If user is not logged in
-    else {
-        // Redirect to index.html only if trying to access dashboard or other protected pages
-        if (!currentPath.endsWith("index.html") && 
-            !currentPath.endsWith("index2.html") && 
-            !currentPath.endsWith("/")) { 
+    } else {
+        const publicPaths = ["index.html", "index2.html", "/"];
+        const isPublicPath = publicPaths.some(path => currentPath.endsWith(path));
+        
+        if (!isPublicPath) {
             window.location.href = "index.html";
         }
     }
