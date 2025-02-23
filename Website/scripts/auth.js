@@ -21,15 +21,15 @@ window.onload = function() {
     console.log("Current path:", currentPath);
 
     if (user) {
-        if (currentPath.endsWith("index.html")) {
+        if (currentPath==='/index') {
             window.location.href = "dashboard.html";
         }
     } else {
-        const publicPaths = ["index.html", "index2.html", "/"];
-        const isPublicPath = publicPaths.some(path => currentPath.endsWith(path));
+        const publicPaths = ["/index", "/index2", "/"];
+        const isPublicPath = publicPaths.includes(currentPath)
         
         if (!isPublicPath) {
-            window.location.href = "index.html";
+            window.location.href = "/";
         }
     }
 };
