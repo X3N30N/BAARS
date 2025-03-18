@@ -1,31 +1,32 @@
-
 /* General Styles */
 body {
     margin: 0;
     font-family: 'Satoshi-Variable', sans-serif;
-    background-color: #10100e; /* Light background */
-    color: #333; /* Dark text */
+    background-color: #10100e;
+    color: #333;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh; /* Full viewport height */
+    min-height: 100vh;
     text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
 /* Container */
 .container {
+    width: 100%;
     max-width: 600px;
     padding: 20px;
+    box-sizing: border-box;
 }
 
 /* Logo */
 .logo {
-    width: 500px; /* Adjust the size as needed */
-    height: auto; /* Maintain aspect ratio */
-    margin-bottom: 0.5rem; /* Space below the logo */
-}
-
-.logo {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    margin-bottom: 0.5rem;
     animation: fadeIn 1s ease-in-out;
 }
 
@@ -36,23 +37,82 @@ body {
 
 /* Subtitle */
 p {
-    font-size: 1.2rem;
-    color: #5f5f53; /* Gray color for the subtitle */
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
+    color: #5f5f53;
     margin-bottom: 2rem;
+    line-height: 1.5;
 }
 
 /* Get Started Button */
 #get-started {
-    padding: 1rem 2rem;
-    font-size: 1rem;
+    padding: clamp(0.8rem, 2vw, 1rem) clamp(1.5rem, 4vw, 2rem);
+    font-size: clamp(0.9rem, 2vw, 1rem);
     color: #fff;
-    background-color: transparent; /* Blue background */
-    border: none;
+    background-color: transparent;
+    border: 2px solid #5f5f53;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: all 0.3s ease;
+    width: fit-content;
+    min-width: 150px;
 }
 
 #get-started:hover {
-    background-color: #5f5f53; /* Darker blue on hover */
+    background-color: #5f5f53;
+    transform: translateY(-2px);
+}
+
+/* Media Queries */
+@media screen and (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+    
+    .logo {
+        max-width: 400px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    body {
+        padding: 15px;
+    }
+
+    .container {
+        padding: 10px;
+    }
+    
+    .logo {
+        max-width: 300px;
+    }
+
+    p {
+        margin-bottom: 1.5rem;
+    }
+
+    #get-started {
+        width: 100%;
+        max-width: 200px;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .logo {
+        max-width: 250px;
+    }
+    
+    .container {
+        padding: 5px;
+    }
+}
+
+/* For larger screens */
+@media screen and (min-width: 1200px) {
+    .container {
+        max-width: 800px;
+    }
+    
+    .logo {
+        max-width: 600px;
+    }
 }

@@ -1,9 +1,9 @@
 function login() {
     const username = document.getElementById("username").value;
     const password = document.getElementById("password").value;
-    if (username === "admin" && password === "12345") { 
+    if (username === "admin" && password === "1234") { 
         localStorage.setItem("user", username);
-        window.location.href = "dashboard.html";
+        window.location.href = "dashboard";
     } else {
         alert("Invalid Credentials");
     }
@@ -11,25 +11,27 @@ function login() {
 
 function logout() {
     localStorage.removeItem("user");
-    window.location.href = "index.html";
+    window.location.href = "index";
 }
 
 window.onload = function() {
     const user = localStorage.getItem("user");
     const currentPath = window.location.pathname;
     
-    console.log("Current path:", currentPath);
-
+    // If user is logged in
     if (user) {
-        if (currentPath==='/index') {
-            window.location.href = "dashboard.html";
+        // Only redirect from index.html to dashboard
+        if (currentPath.endsWith("index")) {
+            window.location.href = "dashboard";
         }
-    } else {
-        const publicPaths = ["/index", "/index2", "/"];
-        const isPublicPath = publicPaths.includes(currentPath)
-        
-        if (!isPublicPath) {
-            window.location.href = "/";
+    } 
+    // If user is not logged in
+    else {
+        // Redirect to index.html only if trying to access dashboard or other protected pages
+        if (!currentPath.endsWith("index") && 
+            !currentPath.endsWith("index2") && 
+            !currentPath.endsWith("/")) { 
+            window.location.href = "index";
         }
     }
 };
