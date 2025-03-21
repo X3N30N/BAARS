@@ -37,18 +37,49 @@ input:focus {
 
 button {
     width: 100%;
-    padding: 12px;
+    padding: 12px 16px;
     margin-top: 20px;
     background: #f9f9e1;
     color: #000;
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    font-size: 14px;
-    font-weight: 600;
-    transition: background-color 0.3s ease;
+    font-size: 16px;
+    font-weight: 500;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 button:hover {
-    background: #f9f9e1;
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+#statusMessage {
+    margin-top: 15px;
+    transition: opacity 0.3s ease;
+    opacity: 0;
+    font-weight: 500;
+}
+
+#statusMessage.loading {
+    opacity: 1;
+    color: #f9f9e1;
+}
+
+#statusMessage.success {
+    opacity: 1;
+    color: #4caf50;
+}
+
+#statusMessage.error {
+    opacity: 1;
+    color: #f44336;
+}
+
+#statusMessage.warning {
+    opacity: 1;
+    color: #ff9800;
 }

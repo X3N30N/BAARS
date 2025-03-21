@@ -1,0 +1,206 @@
+/* Import Satoshi font */
+@import url('satoshi.css');
+
+/* General Styles */
+body {
+    margin: 0;
+    background-color: #0e0e0e;
+    color: #f9f9e1;
+    font-family: 'Satoshi', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Navigation */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background: #191919;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+nav .logo {
+    max-width: 150px;
+    width: 100%;
+    height: auto;
+}
+
+nav a {
+    color: #f9f9e1;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #ffd700;
+}
+
+/* Containers */
+.container,
+.dashboard-container,
+.scan-container,
+.login-container {
+    background: #1c1c1c;
+    padding: 2.5rem;
+    border-radius: 8px;
+    text-align: center;
+    width: 100%;
+    max-width: 300px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    margin-top: 60px; /* Account for fixed nav */
+}
+
+/* Inputs */
+input {
+    width: calc(100% - 20px);
+    padding: 12px;
+    margin: 15px 0;
+    border: 1px solid #2a2a2a;
+    border-radius: 4px;
+    background: #2a2a2a;
+    color: #f9f9e1;
+    font-size: 14px;
+    transition: border-color 0.3s ease;
+}
+
+input:focus {
+    outline: none;
+    border-color: #f9f9e1;
+}
+
+/* Buttons */
+button {
+    background: #f9f9e1;
+    color: #0e0e0e;
+    border: none;
+    padding: 12px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    width: 100%;
+    max-width: 200px;
+    margin: 10px auto;
+    display: block;
+}
+
+button:hover {
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+/* Status Messages (for scan.html) */
+#statusMessage {
+    transition: opacity 0.3s ease;
+    opacity: 0;
+    font-weight: 500;
+}
+
+#statusMessage.loading {
+    opacity: 1;
+    color: #f9f9e1;
+}
+
+#statusMessage.success {
+    opacity: 1;
+    color: #4caf50;
+}
+
+#statusMessage.error {
+    opacity: 1;
+    color: #f44336;
+}
+
+#statusMessage.warning {
+    opacity: 1;
+    color: #ff9800;
+}
+
+/* Table (for attendance.html) */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background: #1c1c1c;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #2a2a2a;
+}
+
+th {
+    background: #2a2a2a;
+    font-weight: 600;
+}
+
+td {
+    font-weight: 400;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .container,
+    .dashboard-container,
+    .scan-container,
+    .login-container {
+        padding: 1.5rem;
+        max-width: 280px;
+    }
+
+    nav {
+        padding: 10px;
+    }
+
+    nav .logo {
+        max-width: 120px;
+    }
+
+    nav a {
+        margin: 0 10px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+
+    .container,
+    .dashboard-container,
+    .scan-container,
+    .login-container {
+        padding: 1rem;
+        max-width: 260px;
+    }
+
+    nav .logo {
+        max-width: 100px;
+    }
+
+    nav a {
+        margin: 0 5px;
+        font-size: 14px;
+    }
+}
