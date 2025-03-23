@@ -13,9 +13,11 @@
 <body>
     <div class="scan-container">
         <h1>Verify Your Attendance</h1>
-        <p>Enter the challenge code displayed on the LCD screen.</p>
+        <p>Enter the ESP32 address (or use baars.local if supported):</p>
+        <input type="text" id="esp32Address" placeholder="e.g., 192.168.1.x">
+        <p>Enter the challenge code displayed on the LCD screen:</p>
         <input type="text" id="challengeInput" placeholder="Enter Challenge Code" maxlength="4">
-        <button id="submitChallenge">Submit</button>
+        <button id="submitChallenge">Verify</button>
         <p id="statusMessage"></p>
     </div>
     <script src="scan.js"></script>

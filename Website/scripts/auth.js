@@ -20,17 +20,14 @@ window.onload = function() {
     
     // If user is logged in
     if (user) {
-        // Only redirect from index.html to dashboard
         if (currentPath.endsWith("index")) {
             window.location.href = "dashboard";
         }
     } 
     // If user is not logged in
     else {
-        // Redirect to index.html only if trying to access dashboard or other protected pages
-        if (!currentPath.endsWith("index") && 
-            !currentPath.endsWith("index2") && 
-            !currentPath.endsWith("/")) { 
+        // Only redirect to index if trying to access dashboard
+        if (currentPath.endsWith("dashboard")) {
             window.location.href = "index";
         }
     }

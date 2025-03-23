@@ -29,18 +29,17 @@ button {
     max-width: 150px;
     width: 100%;
     margin-top: 10px;
-    font-size: 16px;  /* Base font size for all buttons */
+    font-size: 16px;
     font-weight: 500;
     transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-/* Specific styling for logout button */
 #logoutBtn {
-    font-size: 18px;  /* Larger font size for logout button */
+    font-size: 18px;
     font-weight: 600;
-    margin-top: 0;    /* Remove top margin for nav button */
-    width: auto;      /* Allow button to size to content */
-    min-width: 100px; /* Minimum width */
+    margin-top: 0;
+    width: auto;
+    min-width: 100px;
 }
 
 button:hover {
@@ -50,4 +49,32 @@ button:hover {
 
 .container {
     margin-top: 50px;
+}
+
+h3 {
+    font-size: 1.2rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 2rem;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #2a2a2a;
+}
+
+th {
+    background: #2a2a2a;
+    font-weight: 600;
+    color: #f9f9e1;
+}
+
+td {
+    color: #f9f9e1;
 }
